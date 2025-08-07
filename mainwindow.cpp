@@ -130,18 +130,18 @@ MainWindow::on_Save()
             QFile file( fileName );
             if( file.open( QFile::WriteOnly ) )
             {
-                if( false )
+                if( __EXPORT_FORMAT__ == ExportTypeJSON )
+                {
+                    QJsonObject obj; ::Write( obj, __AppOption );
+                    file.write( QJsonDocument( obj ).toJson() );
+                }
+                else
                 {
                     QByteArray Buffer;
                     CIOStreamer ios( APP_DATA_VERSION );
                     ::Write( ios, __AppOption );
                     Buffer.append( ios.m_Buffer, ios.m_Buffer_Size );
                     file.write( Buffer );
-                }
-                else
-                {
-                    QJsonObject obj; ::Write( obj, __AppOption );
-                    file.write( QJsonDocument( obj ).toJson() );
                 }
 
                 file.flush();
@@ -184,16 +184,16 @@ MainWindow::on_Load()
             QFile file( filePath );
             if( file.open( QIODevice::ReadOnly ) )
             {
-                if( false )
+                if( __EXPORT_FORMAT__ == ExportTypeJSON )
+                {
+                    QJsonObject obj = QJsonDocument::fromJson( file.readAll() ).object();
+                    ::Read( obj, __AppOption, APP_DATA_VERSION );
+                }
+                else
                 {
                     CIOStreamer ios( file.size(), APP_DATA_VERSION );
                     ::memcpy( ios.m_Buffer, (void*)file.readAll().begin(), file.size() );
                     ::Read( ios, __AppOption, APP_DATA_VERSION );
-                }
-                else
-                {
-                    QJsonObject obj = QJsonDocument::fromJson( file.readAll() ).object();
-                    ::Read( obj, __AppOption, APP_DATA_VERSION );
                 }
 
                 file.close();

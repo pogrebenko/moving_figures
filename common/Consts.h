@@ -18,6 +18,14 @@
 #define __SMART__
 
 typedef enum {
+    ExportTypeNone              = 0,
+    ExportTypeBin               = 1,
+    ExportTypeJSON              = 2,
+} FormatFileType_t;
+
+#define __EXPORT_FORMAT__ ExportTypeJSON
+
+typedef enum {
     ActionTypeNone              = 0,
     ActionTypeAddFigure         = 1,
     ActionTypeAddRelation       = 2,
