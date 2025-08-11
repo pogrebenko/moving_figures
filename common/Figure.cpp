@@ -1,5 +1,7 @@
 #include "Figure.h"
 
+#include <algorithm>
+
 #include <QRect>
 #include <QPainterPath>
 #include <QtMath>
@@ -163,71 +165,81 @@ FigureList_t::hover_clear()
 long
 FigureList_t::hover_index( const QPoint &pos )
 {
-    for( long n = size() - 1; n >= 0; n -- )
-    {
-        assert( at( n )->m_nFigureType != FigureTypeNone );
-        if( at( n )->contain( pos ) )
-        {
-            return n;
-        }
-    }
-    return -1;
+    auto found_reverse = std::find_if( __EXECUTION_POLICY_BUILDER__, rbegin(), rend(), [pos]( auto pItem ) { return pItem->contain( pos ); } );
+    return ( found_reverse != rend() ) ? std::distance( begin(), -- found_reverse.base() ) : -1;
+    // for( long n = size() - 1; n >= 0; n -- )
+    // {
+    //     assert( at( n )->m_nFigureType != FigureTypeNone );
+    //     if( at( n )->contain( pos ) )
+    //     {
+    //         return n;
+    //     }
+    // }
+    // return -1;
 }
 
 long
 FigureList_t::hover_resize_index( const QPoint &pos )
 {
-    for( long n = size() - 1; n >= 0; n -- )
-    {
-        assert( at( n )->m_nFigureType != FigureTypeNone );
-        if( at( n )->near_points( at( n )->m_nResizePos, pos ) )
-        {
-            return n;
-        }
-    }
-    return -1;
+    auto found = std::find_if( __EXECUTION_POLICY_BUILDER__, rbegin(), rend(), [pos]( auto pItem ) { return pItem->near_points( pItem->m_nResizePos, pos ); } );
+    return ( found != rend() ) ? std::distance( begin(), -- found.base() ) : -1;
+    // for( long n = size() - 1; n >= 0; n -- )
+    // {
+    //     assert( at( n )->m_nFigureType != FigureTypeNone );
+    //     if( at( n )->near_points( at( n )->m_nResizePos, pos ) )
+    //     {
+    //         return n;
+    //     }
+    // }
+    // return -1;
 }
 
 long
 FigureList_t::hover_angle_index( const QPoint &pos )
 {
-    for( long n = size() - 1; n >= 0; n -- )
-    {
-        assert( at( n )->m_nFigureType != FigureTypeNone );
-        if( at( n )->near_points( at( n )->m_nAnglePos, pos ) )
-        {
-            return n;
-        }
-    }
-    return -1;
+    auto found = std::find_if( __EXECUTION_POLICY_BUILDER__, rbegin(), rend(), [pos]( auto pItem ) { return pItem->near_points( pItem->m_nAnglePos, pos ); } );
+    return ( found != rend() ) ? std::distance( begin(), -- found.base() ) : -1;
+    // for( long n = size() - 1; n >= 0; n -- )
+    // {
+    //     assert( at( n )->m_nFigureType != FigureTypeNone );
+    //     if( at( n )->near_points( at( n )->m_nAnglePos, pos ) )
+    //     {
+    //         return n;
+    //     }
+    // }
+    // return -1;
 }
 
 long
 FigureList_t::hover_first_index( const QPoint &pos )
 {
-    for( long n = size() - 1; n >= 0; n -- )
-    {
-        assert( at( n )->m_nFigureType != FigureTypeNone );
-        if( at( n )->near_points( at( n )->m_nFirstPos, pos ) )
-        {
-            return n;
-        }
-    }
-    return -1;
+    auto found = std::find_if( __EXECUTION_POLICY_BUILDER__, rbegin(), rend(), [pos]( auto pItem ) { return pItem->near_points( pItem->m_nFirstPos, pos ); } );
+    return ( found != rend() ) ? std::distance( begin(), -- found.base() ) : -1;
+    // for( long n = size() - 1; n >= 0; n -- )
+    // {
+    //     assert( at( n )->m_nFigureType != FigureTypeNone );
+    //     if( at( n )->near_points( at( n )->m_nFirstPos, pos ) )
+    //     {
+    //         return n;
+    //     }
+    // }
+    // return -1;
 }
 
 long
 FigureList_t::hover_last_index( const QPoint &pos )
 {
-    for( long n = size() - 1; n >= 0; n -- )
-    {
-        assert( at( n )->m_nFigureType != FigureTypeNone );
-        if( at( n )->near_points( at( n )->m_nLastPos, pos ) )
-        {
-            return n;
-        }
-    }
-    return -1;
+    auto found = std::find_if( __EXECUTION_POLICY_BUILDER__, rbegin(), rend(), [pos]( auto pItem ) { return pItem->near_points( pItem->m_nLastPos, pos ); } );
+    return ( found != rend() ) ? std::distance( begin(), -- found.base() ) : -1;
+    // for( long n = size() - 1; n >= 0; n -- )
+    // {
+    //     assert( at( n )->m_nFigureType != FigureTypeNone );
+    //     if( at( n )->near_points( at( n )->m_nLastPos, pos ) )
+    //     {
+    //         return n;
+    //     }
+    // }
+    // return -1;
 }
 
 

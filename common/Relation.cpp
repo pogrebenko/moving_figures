@@ -76,27 +76,30 @@ __Relation::contain( const QPoint &point )
 bool
 RelationList_t::validate( long nFrom, long nTo )
 {
-    for( long n = size() - 1; n >= 0; n -- )
-    {
-        auto &pp = at( n );
-        assert( pp->m_nRelationType != RelationTypeNone );
+    auto found = std::find_if( __EXECUTION_POLICY_BUILDER__, rbegin(), rend(), [ nFrom, nTo ]( auto &pItem ) { return pItem->m_nFrom == nFrom && pItem->m_nTo == nTo; } );
+    return found == rend();
+    // for( long n = size() - 1; n >= 0; n -- )
+    // {
+    //     auto &pp = at( n );
+    //     assert( pp->m_nRelationType != RelationTypeNone );
 
-        if( pp->m_nFrom == nFrom && pp->m_nTo == nTo )
-        {
-            return false;
-        }
-    }
-    return true;
+    //     if( pp->m_nFrom == nFrom && pp->m_nTo == nTo )
+    //     {
+    //         return false;
+    //     }
+    // }
+    // return true;
 }
 
 void
 RelationList_t::calculate( FigureList_t *pFigureList )
 {
-    for( long n = size() - 1; n >= 0; n -- )
-    {
-        auto &pp = at( n );
-        pp->calculate( *pFigureList->at( pp->m_nFrom ), *pFigureList->at( pp->m_nTo ) );
-    }
+    std::for_each( __EXECUTION_POLICY_BUILDER__, begin(), end(), [ pFigureList ]( auto &pItem ) { pItem->calculate( *pFigureList->at( pItem->m_nFrom ), *pFigureList->at( pItem->m_nTo ) ); } );
+    // for( long n = size() - 1; n >= 0; n -- )
+    // {
+    //     auto &pp = at( n );
+    //     pp->calculate( *pFigureList->at( pp->m_nFrom ), *pFigureList->at( pp->m_nTo ) );
+    // }
 }
 
 void
@@ -105,14 +108,16 @@ RelationList_t::hover_clear() { for( auto &p : *this ) { p->m_bHover = false; } 
 long
 RelationList_t::hover_index( const QPoint &pos )
 {
-    for( long n = size() - 1; n >= 0; n -- )
-    {
-        assert( at( n )->m_nRelationType != RelationTypeNone );
+    auto found = std::find_if( __EXECUTION_POLICY_BUILDER__, rbegin(), rend(), [ pos ]( auto &pItem ) { return pItem->contain( pos ); } );
+    return ( found != rend() ) ? std::distance( begin(), -- found.base() ) : -1;
+    // for( long n = size() - 1; n >= 0; n -- )
+    // {
+    //     assert( at( n )->m_nRelationType != RelationTypeNone );
 
-        if( at( n )->contain( pos ) )
-        {
-            return n;
-        }
-    }
-    return -1;
+    //     if( at( n )->contain( pos ) )
+    //     {
+    //         return n;
+    //     }
+    // }
+    // return -1;
 }
