@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include <QActionGroup>
 #include <QFileDialog>
+#include <QMessageBox>
 
 #include <QJsonObject>
 #include <QJsonDocument>
@@ -106,7 +107,7 @@ MainWindow::init_ui( CAppOption *pAppOption )
         case ActionTypeAddRelation : ui->actionRelation->setChecked( true ); break;
         case ActionTypeDelete      : ui->actionDelete  ->setChecked( true ); break;
         case ActionTypeMove        : ui->actionMove    ->setChecked( true ); break;
-        default                    : assert( false && "error: unknown figure type" ); break;
+        default                    : throw "error: unknown figure type"; //assert( false && "error: unknown figure type" ); break;
     }
 }
 
@@ -123,10 +124,10 @@ MainWindow::on_Save()
     );
     if( !fileName.isEmpty() )
     {
+        QString sError = "";
+        this->setCursor( Qt::WaitCursor );
         try
         {
-            this->setCursor(Qt::WaitCursor);
-
             QFile file( fileName );
             if( file.open( QFile::WriteOnly ) )
             {
@@ -151,14 +152,23 @@ MainWindow::on_Save()
             }
             else
             {
-                __Logger.error( APP_LOG_LEVEL, "error: Could not open file: %s", file.errorString().toStdString().data() );
+                //__Logger.error( APP_LOG_LEVEL, "error: Could not open file: %s", file.errorString().toStdString().data() );
+                sError = "Error: Could not open file: %s" + file.errorString();
             }
 
-            this->setCursor(Qt::ArrowCursor);
         }
         catch( ... )
         {
-            __Logger.error( APP_LOG_LEVEL, "error: unknown exception" );
+            sError = "Exception error when trying to open a file.";
+        }
+        this->setCursor( Qt::ArrowCursor );
+
+        if( !sError.isEmpty() )
+        {
+            QMessageBox msgBox( this );
+                        msgBox.setIcon( QMessageBox::Critical );
+                        msgBox.setText( sError );
+                        msgBox.exec();
         }
     }
 }
@@ -177,10 +187,10 @@ MainWindow::on_Load()
 
     if( !filePath.isEmpty() )
     {
+        QString sError = "";
+        this->setCursor(Qt::WaitCursor);
         try
         {
-            this->setCursor(Qt::WaitCursor);
-
             QFile file( filePath );
             if( file.open( QIODevice::ReadOnly ) )
             {
@@ -208,15 +218,24 @@ MainWindow::on_Load()
             }
             else
             {
-                std::string sError = file.errorString().toStdString();
-                __Logger.error( APP_LOG_LEVEL, "error: Could not open file: %s", sError.c_str() );
-            }
+                sError = "Error: Could not open file: %s" + file.errorString();
 
-            this->setCursor(Qt::ArrowCursor);
+                //std::string sError = file.errorString().toStdString();
+                //__Logger.error( APP_LOG_LEVEL, "error: Could not open file: %s", sError.c_str() );
+            }
         }
         catch( ... )
         {
-            __Logger.error( APP_LOG_LEVEL, "error: unknown exception" );
+            sError = "Exception error when trying to open a file.";
+        }
+        this->setCursor(Qt::ArrowCursor);
+
+        if( !sError.isEmpty() )
+        {
+            QMessageBox msgBox( this );
+                        msgBox.setIcon(QMessageBox::Critical);
+                        msgBox.setText( sError );
+                        msgBox.exec();
         }
     }
 }
