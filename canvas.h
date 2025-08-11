@@ -35,6 +35,22 @@ protected:
     bool  m_bBreakAddFigure;
 
     using QWidget::QWidget;
+
+//     // update/draw tiemrs
+    QTimer *drawTimer;
+    QTimer *updateTimer;
+    QTime  *deltaTimer;
+
+    bool isFirstFrameFinished;
+    float minTimeStepValue;
+    float maxTimeStepValue;
+    float deltaTimeModifier;
+    float minDeltaTimeModifier;
+    float maxDeltaTimeModifier;
+
+public slots:
+    void updateBuilder();
+    void updatePainter();
 };
 
 #endif // CANVAS_H
