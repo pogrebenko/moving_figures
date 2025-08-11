@@ -15,7 +15,13 @@
 #define DELTA_ANGLE         10.
 #define DELTA_RESIZE        10.
 
+#undef __THREADS__
 #define __SMART__
+
+#include <execution>
+
+#define __EXECUTION_POLICY_BUILDER__ std::execution::par
+#define __EXECUTION_POLICY_PAINTER__ std::execution::seq
 
 typedef enum {
     ExportTypeNone              = 0,
