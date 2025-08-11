@@ -42,10 +42,10 @@ typedef struct __Figure
 #include <memory>
 #include <vector>
 
-class CFigureHolder : public std::unique_ptr<Figure_t>
+class CFigureHolder : public std::shared_ptr<Figure_t>
 {
 public :
-    inline CFigureHolder( Figure_t *pItem ) : std::unique_ptr<Figure_t>( pItem ) {}
+    inline CFigureHolder( Figure_t *pItem ) : std::shared_ptr<Figure_t>( pItem ) {}
 };
 
 class FigureList_t : public std::vector< CFigureHolder >
