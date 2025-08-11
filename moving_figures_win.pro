@@ -28,6 +28,7 @@ SOURCES += \
 HEADERS += \
     app.h \
     canvas.h \
+    common/Compare.h \
     common/Consts.h \
     common/Figure.h \
     common/IOStreamer.h \

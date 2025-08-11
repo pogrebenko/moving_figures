@@ -40,25 +40,25 @@ CCanvas::CCanvas( QWidget *pParent, CAppOption * const pAppOption, Logger_t * co
 
 
 
-    // initialize update/draw timers
-    float updatesPerSecond = 120;
-    float drawsPerSecond = 30;
-    // simulation system
-    isFirstFrameFinished = false;
-    minDeltaTimeModifier = 0.125;
-    maxDeltaTimeModifier = 1.0;
-    deltaTimeModifier = maxDeltaTimeModifier;
+//     // initialize update/draw timers
+//     float updatesPerSecond = 120;
+//     float drawsPerSecond = 30;
+//     // simulation system
+//     isFirstFrameFinished = false;
+//     minDeltaTimeModifier = 0.125;
+//     maxDeltaTimeModifier = 1.0;
+//     deltaTimeModifier = maxDeltaTimeModifier;
 
-    drawTimer = new QTimer(this);
-    connect(drawTimer, &QTimer::timeout, this, &CCanvas::updatePainter );
-//    drawTimer->start(1000.0/drawsPerSecond);
+//     drawTimer = new QTimer(this);
+//     connect(drawTimer, &QTimer::timeout, this, &CCanvas::updatePainter );
+// //    drawTimer->start(1000.0/drawsPerSecond);
 
-    updateTimer = new QTimer(this);
-    connect(updateTimer, &QTimer::timeout, this, &CCanvas::updateBuilder );
-//    updateTimer->start(1000.0/updatesPerSecond);
+//     updateTimer = new QTimer(this);
+//     connect(updateTimer, &QTimer::timeout, this, &CCanvas::updateBuilder );
+// //    updateTimer->start(1000.0/updatesPerSecond);
 
-    deltaTimer = new QTime();
-//    deltaTimer->start();
+//     deltaTimer = new QTime();
+// //    deltaTimer->start();
 }
 
 void
