@@ -1,6 +1,12 @@
 #include "Painter.h"
 
+#ifdef __THREADS__
+    #include <thread>
+    #include <mutex>
+#endif
+
 #include <cmath>
+
 #include <QtMath>
 
 #include "../common/Options.h"
@@ -104,10 +110,30 @@ CPainter::draw_relation( QPainter &painter, RelationList_t *RelationList )
 
     //__Logger.info( APP_LOG_LEVEL, "info: draw_relation %d", RelationList->size() );
 
+#ifdef __THREADS__
+    std::mutex Mutex;
+    std::vector< std::unique_ptr<std::thread> > Threads;
     for( unsigned long n = 0, size = RelationList->size(); n < size; n ++ )
     {
-        draw_relation_item( painter, *RelationList->at( n ) );
+        Threads.push_back( std::make_unique<std::thread>(
+            [this]( QPainter *painter, Relation_t *pRelation, std::mutex *pMutex )
+            {
+                std::lock_guard<std::mutex> lg( *pMutex );
+                this->draw_relation_item( *painter, *pRelation );
+            }, &painter, RelationList->at( n ).get(), &Mutex )
+        );
     }
+
+    for_each( __EXECUTION_POLICY_PAINTER__, Threads.begin(), Threads.end(), [&]( auto &pItem ){ if( pItem->joinable() ) pItem->join(); } );
+#else
+
+    for_each( __EXECUTION_POLICY_PAINTER__, RelationList->begin(), RelationList->end(), [&]( auto &pItem ){ draw_relation_item( painter, *pItem ); } );
+
+    // for( unsigned long n = 0, size = RelationList->size(); n < size; n ++ )
+    // {
+    //     draw_relation_item( painter, *RelationList->at( n ) );
+    // }
+#endif
 }
 
 void
@@ -187,10 +213,31 @@ CPainter::draw_figure( QPainter &painter, FigureList_t *FigureList )
 
     //__Logger.info( APP_LOG_LEVEL, "info: draw_figure %d", FigureList->size() );
 
+#ifdef __THREADS__
+    std::mutex Mutex;
+    std::vector< std::unique_ptr< std::thread > > Threads;
+
     for( unsigned long n = 0, size = FigureList->size(); n < size; n ++ )
     {
-        draw_figure_item( painter, *FigureList->at( n ) );
+        Threads.push_back( std::make_unique<std::thread>(
+            [this]( QPainter *painter, Figure_t *pFigure, std::mutex *pMutex )
+            {
+                std::lock_guard<std::mutex> lg( *pMutex );
+                this->draw_figure_item( *painter, *pFigure );
+            }, &painter, FigureList->at( n ).get(), &Mutex )
+        );
     }
+
+    for_each( __EXECUTION_POLICY_PAINTER__, Threads.begin(), Threads.end(), [&]( auto &pItem ){ if( pItem->joinable() ) pItem->join(); } );
+#else
+
+    for_each( __EXECUTION_POLICY_PAINTER__, FigureList->begin(), FigureList->end(), [&]( auto &pItem ){ draw_figure_item( painter, *pItem ); } );
+
+    // for( unsigned long n = 0, size = FigureList->size(); n < size; n ++ )
+    // {
+    //     draw_figure_item( painter, *FigureList->at( n ) );
+    // }
+#endif
 }
 
 void
