@@ -1,6 +1,12 @@
 #include "canvas.h"
 
+#include <QTimer>
+#include <QTime>
+
+#include <cmath>
+
 #include <QObject>
+#include <QAction>
 #include <QtGui/QCursor>
 
 #include "common/Options.h"
@@ -28,6 +34,62 @@ CCanvas::CCanvas( QWidget *pParent, CAppOption * const pAppOption, Logger_t * co
 
     m_bMouseLButtonMoved = false;
     m_bBreakAddFigure    = false;
+
+
+
+
+
+
+    // initialize update/draw timers
+    float updatesPerSecond = 120;
+    float drawsPerSecond = 30;
+    // simulation system
+    isFirstFrameFinished = false;
+    minDeltaTimeModifier = 0.125;
+    maxDeltaTimeModifier = 1.0;
+    deltaTimeModifier = maxDeltaTimeModifier;
+
+    drawTimer = new QTimer(this);
+    connect(drawTimer, &QTimer::timeout, this, &CCanvas::updatePainter );
+//    drawTimer->start(1000.0/drawsPerSecond);
+
+    updateTimer = new QTimer(this);
+    connect(updateTimer, &QTimer::timeout, this, &CCanvas::updateBuilder );
+//    updateTimer->start(1000.0/updatesPerSecond);
+
+    deltaTimer = new QTime();
+//    deltaTimer->start();
+}
+
+void
+CCanvas::updatePainter()
+{
+    getLogger()->info( APP_LOG_LEVEL, "info: updatePainter" );
+
+}
+
+void
+CCanvas::updateBuilder()
+{
+    getLogger()->info( APP_LOG_LEVEL, "info: updateBuilder" );
+//     minTimeStepValue = floor(1000.0/320.0);
+//     maxTimeStepValue = floor(1000.0/24.0);
+
+//     float dt = (float) deltaTimer->elapsed() / 1000;
+
+//     // dt might be large on the first frame
+//     if (!isFirstFrameFinished) {
+//         dt = minTimeStepValue / 1000.0;
+//         isFirstFrameFinished = true;
+//     }
+//     // make sure dt does not get too big
+//     if (dt > maxTimeStepValue / 1000.0) {
+//         dt = maxTimeStepValue / 1000.0;
+//     }
+//     deltaTimer->restart();
+
+//     dt *= deltaTimeModifier;  // speed of simulation
+//     //Builder.update(dt);
 }
 
 void
