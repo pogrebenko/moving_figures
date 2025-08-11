@@ -1,0 +1,648 @@
+{
+    "m_ArrowType": 0,
+    "m_BkgColor": 3,
+    "m_BrushColor": 8,
+    "m_BrushStyle": 13,
+    "m_FigureList": {
+        "FigureItems": [
+            {
+                "m_bHover": false,
+                "m_nAngle": 0,
+                "m_nAnglePos": {
+                    "x": 45,
+                    "y": 25
+                },
+                "m_nAnglesCount": 4,
+                "m_nFigureType": 3,
+                "m_nFirstPos": {
+                    "x": 53,
+                    "y": 32
+                },
+                "m_nLastPos": {
+                    "x": 110,
+                    "y": 77
+                },
+                "m_nResizePos": {
+                    "x": 120,
+                    "y": 87
+                }
+            },
+            {
+                "m_bHover": false,
+                "m_nAngle": 0,
+                "m_nAnglePos": {
+                    "x": 267,
+                    "y": 45
+                },
+                "m_nAnglesCount": 4,
+                "m_nFigureType": 3,
+                "m_nFirstPos": {
+                    "x": 275,
+                    "y": 52
+                },
+                "m_nLastPos": {
+                    "x": 343,
+                    "y": 107
+                },
+                "m_nResizePos": {
+                    "x": 353,
+                    "y": 117
+                }
+            },
+            {
+                "m_bHover": false,
+                "m_nAngle": 0,
+                "m_nAnglePos": {
+                    "x": 155,
+                    "y": 229
+                },
+                "m_nAnglesCount": 0,
+                "m_nFigureType": 2,
+                "m_nFirstPos": {
+                    "x": 162,
+                    "y": 237
+                },
+                "m_nLastPos": {
+                    "x": 226,
+                    "y": 311
+                },
+                "m_nResizePos": {
+                    "x": 236,
+                    "y": 321
+                }
+            },
+            {
+                "m_bHover": false,
+                "m_nAngle": 0,
+                "m_nAnglePos": {
+                    "x": 438,
+                    "y": 146
+                },
+                "m_nAnglesCount": 4,
+                "m_nFigureType": 3,
+                "m_nFirstPos": {
+                    "x": 445,
+                    "y": 154
+                },
+                "m_nLastPos": {
+                    "x": 513,
+                    "y": 232
+                },
+                "m_nResizePos": {
+                    "x": 523,
+                    "y": 242
+                }
+            },
+            {
+                "m_bHover": false,
+                "m_nAngle": 1.0733451843261719,
+                "m_nAnglePos": {
+                    "x": 285,
+                    "y": 279
+                },
+                "m_nAnglesCount": 0,
+                "m_nFigureType": 2,
+                "m_nFirstPos": {
+                    "x": 318,
+                    "y": 236
+                },
+                "m_nLastPos": {
+                    "x": 368,
+                    "y": 316
+                },
+                "m_nResizePos": {
+                    "x": 378,
+                    "y": 326
+                }
+            },
+            {
+                "m_bHover": false,
+                "m_nAngle": 0,
+                "m_nAnglePos": {
+                    "x": 569,
+                    "y": 310
+                },
+                "m_nAnglesCount": 0,
+                "m_nFigureType": 2,
+                "m_nFirstPos": {
+                    "x": 575,
+                    "y": 319
+                },
+                "m_nLastPos": {
+                    "x": 637,
+                    "y": 413
+                },
+                "m_nResizePos": {
+                    "x": 647,
+                    "y": 423
+                }
+            },
+            {
+                "m_bHover": false,
+                "m_nAngle": 0,
+                "m_nAnglePos": {
+                    "x": 346,
+                    "y": 436
+                },
+                "m_nAnglesCount": 0,
+                "m_nFigureType": 2,
+                "m_nFirstPos": {
+                    "x": 355,
+                    "y": 441
+                },
+                "m_nLastPos": {
+                    "x": 476,
+                    "y": 500
+                },
+                "m_nResizePos": {
+                    "x": 486,
+                    "y": 510
+                }
+            },
+            {
+                "m_bHover": false,
+                "m_nAngle": 0,
+                "m_nAnglePos": {
+                    "x": 40,
+                    "y": 136
+                },
+                "m_nAnglesCount": 3,
+                "m_nFigureType": 1,
+                "m_nFirstPos": {
+                    "x": 46,
+                    "y": 145
+                },
+                "m_nLastPos": {
+                    "x": 94,
+                    "y": 221
+                },
+                "m_nResizePos": {
+                    "x": 104,
+                    "y": 231
+                }
+            },
+            {
+                "m_bHover": false,
+                "m_nAngle": 0,
+                "m_nAnglePos": {
+                    "x": 44,
+                    "y": 291
+                },
+                "m_nAnglesCount": 3,
+                "m_nFigureType": 1,
+                "m_nFirstPos": {
+                    "x": 51,
+                    "y": 299
+                },
+                "m_nLastPos": {
+                    "x": 140,
+                    "y": 394
+                },
+                "m_nResizePos": {
+                    "x": 150,
+                    "y": 404
+                }
+            },
+            {
+                "m_bHover": false,
+                "m_nAngle": 0,
+                "m_nAnglePos": {
+                    "x": 251,
+                    "y": 436
+                },
+                "m_nAnglesCount": 3,
+                "m_nFigureType": 1,
+                "m_nFirstPos": {
+                    "x": 256,
+                    "y": 445
+                },
+                "m_nLastPos": {
+                    "x": 299,
+                    "y": 529
+                },
+                "m_nResizePos": {
+                    "x": 309,
+                    "y": 539
+                }
+            },
+            {
+                "m_bHover": false,
+                "m_nAngle": 0,
+                "m_nAnglePos": {
+                    "x": 400,
+                    "y": 47
+                },
+                "m_nAnglesCount": 3,
+                "m_nFigureType": 1,
+                "m_nFirstPos": {
+                    "x": 407,
+                    "y": 55
+                },
+                "m_nLastPos": {
+                    "x": 427,
+                    "y": 81
+                },
+                "m_nResizePos": {
+                    "x": 437,
+                    "y": 91
+                }
+            },
+            {
+                "m_bHover": false,
+                "m_nAngle": 0,
+                "m_nAnglePos": {
+                    "x": 633,
+                    "y": 61
+                },
+                "m_nAnglesCount": 3,
+                "m_nFigureType": 1,
+                "m_nFirstPos": {
+                    "x": 636,
+                    "y": 71
+                },
+                "m_nLastPos": {
+                    "x": 652,
+                    "y": 126
+                },
+                "m_nResizePos": {
+                    "x": 662,
+                    "y": 136
+                }
+            },
+            {
+                "m_bHover": false,
+                "m_nAngle": 0,
+                "m_nAnglePos": {
+                    "x": 562,
+                    "y": 184
+                },
+                "m_nAnglesCount": 3,
+                "m_nFigureType": 1,
+                "m_nFirstPos": {
+                    "x": 569,
+                    "y": 192
+                },
+                "m_nLastPos": {
+                    "x": 620,
+                    "y": 254
+                },
+                "m_nResizePos": {
+                    "x": 630,
+                    "y": 264
+                }
+            },
+            {
+                "m_bHover": false,
+                "m_nAngle": 0.9225252270698547,
+                "m_nAnglePos": {
+                    "x": 271,
+                    "y": 155
+                },
+                "m_nAnglesCount": 3,
+                "m_nFigureType": 1,
+                "m_nFirstPos": {
+                    "x": 293,
+                    "y": 133
+                },
+                "m_nLastPos": {
+                    "x": 326,
+                    "y": 179
+                },
+                "m_nResizePos": {
+                    "x": 336,
+                    "y": 189
+                }
+            },
+            {
+                "m_bHover": false,
+                "m_nAngle": 0.758377730846405,
+                "m_nAnglePos": {
+                    "x": 118,
+                    "y": 129
+                },
+                "m_nAnglesCount": 3,
+                "m_nFigureType": 1,
+                "m_nFirstPos": {
+                    "x": 131,
+                    "y": 129
+                },
+                "m_nLastPos": {
+                    "x": 137,
+                    "y": 141
+                },
+                "m_nResizePos": {
+                    "x": 147,
+                    "y": 151
+                }
+            },
+            {
+                "m_bHover": false,
+                "m_nAngle": 0,
+                "m_nAnglePos": {
+                    "x": 170,
+                    "y": 21
+                },
+                "m_nAnglesCount": 3,
+                "m_nFigureType": 1,
+                "m_nFirstPos": {
+                    "x": 177,
+                    "y": 29
+                },
+                "m_nLastPos": {
+                    "x": 201,
+                    "y": 58
+                },
+                "m_nResizePos": {
+                    "x": 211,
+                    "y": 68
+                }
+            }
+        ],
+        "FigureTypes": [
+            3,
+            3,
+            2,
+            3,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+        ]
+    },
+    "m_PenColor": 7,
+    "m_PenColorResize": 15,
+    "m_PenColorRotate": 14,
+    "m_PenStyle": 1,
+    "m_RelationList": {
+        "RelationItems": [
+            {
+                "m_bHover": false,
+                "m_nFirstPos": {
+                    "x": 81,
+                    "y": 54
+                },
+                "m_nFrom": 0,
+                "m_nLastPos": {
+                    "x": 189,
+                    "y": 43
+                },
+                "m_nRelationType": 1,
+                "m_nTo": 15
+            },
+            {
+                "m_bHover": false,
+                "m_nFirstPos": {
+                    "x": 134,
+                    "y": 135
+                },
+                "m_nFrom": 14,
+                "m_nLastPos": {
+                    "x": 189,
+                    "y": 43
+                },
+                "m_nRelationType": 1,
+                "m_nTo": 15
+            },
+            {
+                "m_bHover": false,
+                "m_nFirstPos": {
+                    "x": 134,
+                    "y": 135
+                },
+                "m_nFrom": 14,
+                "m_nLastPos": {
+                    "x": 309,
+                    "y": 79
+                },
+                "m_nRelationType": 1,
+                "m_nTo": 1
+            },
+            {
+                "m_bHover": false,
+                "m_nFirstPos": {
+                    "x": 134,
+                    "y": 135
+                },
+                "m_nFrom": 14,
+                "m_nLastPos": {
+                    "x": 194,
+                    "y": 274
+                },
+                "m_nRelationType": 1,
+                "m_nTo": 2
+            },
+            {
+                "m_bHover": false,
+                "m_nFirstPos": {
+                    "x": 194,
+                    "y": 274
+                },
+                "m_nFrom": 2,
+                "m_nLastPos": {
+                    "x": 70,
+                    "y": 183
+                },
+                "m_nRelationType": 1,
+                "m_nTo": 7
+            },
+            {
+                "m_bHover": false,
+                "m_nFirstPos": {
+                    "x": 70,
+                    "y": 183
+                },
+                "m_nFrom": 7,
+                "m_nLastPos": {
+                    "x": 95,
+                    "y": 346
+                },
+                "m_nRelationType": 1,
+                "m_nTo": 8
+            },
+            {
+                "m_bHover": false,
+                "m_nFirstPos": {
+                    "x": 70,
+                    "y": 183
+                },
+                "m_nFrom": 7,
+                "m_nLastPos": {
+                    "x": 277,
+                    "y": 487
+                },
+                "m_nRelationType": 1,
+                "m_nTo": 9
+            },
+            {
+                "m_bHover": false,
+                "m_nFirstPos": {
+                    "x": 194,
+                    "y": 274
+                },
+                "m_nFrom": 2,
+                "m_nLastPos": {
+                    "x": 415,
+                    "y": 470
+                },
+                "m_nRelationType": 1,
+                "m_nTo": 6
+            },
+            {
+                "m_bHover": false,
+                "m_nFirstPos": {
+                    "x": 415,
+                    "y": 470
+                },
+                "m_nFrom": 6,
+                "m_nLastPos": {
+                    "x": 606,
+                    "y": 366
+                },
+                "m_nRelationType": 1,
+                "m_nTo": 5
+            },
+            {
+                "m_bHover": false,
+                "m_nFirstPos": {
+                    "x": 606,
+                    "y": 366
+                },
+                "m_nFrom": 5,
+                "m_nLastPos": {
+                    "x": 343,
+                    "y": 276
+                },
+                "m_nRelationType": 1,
+                "m_nTo": 4
+            },
+            {
+                "m_bHover": false,
+                "m_nFirstPos": {
+                    "x": 343,
+                    "y": 276
+                },
+                "m_nFrom": 4,
+                "m_nLastPos": {
+                    "x": 309,
+                    "y": 156
+                },
+                "m_nRelationType": 1,
+                "m_nTo": 13
+            },
+            {
+                "m_bHover": false,
+                "m_nFirstPos": {
+                    "x": 309,
+                    "y": 156
+                },
+                "m_nFrom": 13,
+                "m_nLastPos": {
+                    "x": 479,
+                    "y": 193
+                },
+                "m_nRelationType": 1,
+                "m_nTo": 3
+            },
+            {
+                "m_bHover": false,
+                "m_nFirstPos": {
+                    "x": 479,
+                    "y": 193
+                },
+                "m_nFrom": 3,
+                "m_nLastPos": {
+                    "x": 594,
+                    "y": 223
+                },
+                "m_nRelationType": 1,
+                "m_nTo": 12
+            },
+            {
+                "m_bHover": false,
+                "m_nFirstPos": {
+                    "x": 594,
+                    "y": 223
+                },
+                "m_nFrom": 12,
+                "m_nLastPos": {
+                    "x": 644,
+                    "y": 98
+                },
+                "m_nRelationType": 1,
+                "m_nTo": 11
+            },
+            {
+                "m_bHover": false,
+                "m_nFirstPos": {
+                    "x": 644,
+                    "y": 98
+                },
+                "m_nFrom": 11,
+                "m_nLastPos": {
+                    "x": 417,
+                    "y": 68
+                },
+                "m_nRelationType": 1,
+                "m_nTo": 10
+            },
+            {
+                "m_bHover": false,
+                "m_nFirstPos": {
+                    "x": 417,
+                    "y": 68
+                },
+                "m_nFrom": 10,
+                "m_nLastPos": {
+                    "x": 309,
+                    "y": 79
+                },
+                "m_nRelationType": 1,
+                "m_nTo": 1
+            }
+        ],
+        "RelationTypes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+        ]
+    },
+    "m_nActionType": 3,
+    "m_nAppVariant": 2,
+    "m_nArrowAngle": 10,
+    "m_nArrowSize": 15,
+    "m_nCPRadius": 2,
+    "m_nFigureType": 1,
+    "m_nFirstPos": {
+        "x": 132,
+        "y": 137
+    },
+    "m_nIndexFrom": 10,
+    "m_nLastPos": {
+        "x": 132,
+        "y": 137
+    },
+    "m_nRelationType": 1,
+    "m_nWidth": 2,
+    "m_nWidthHover": 4
+}
