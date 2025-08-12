@@ -35,6 +35,7 @@ typedef struct __Figure
     bool          valid();
     bool          near_points( const QPoint &pt1, const QPoint &pt2 );
     void          calc_angle_point( const QPoint &pt );
+    void          oscillation( int dx, int dy );
 
 } Figure_t;
 

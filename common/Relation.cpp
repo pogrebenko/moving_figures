@@ -69,6 +69,14 @@ __Relation::contain( const QPoint &point )
     return isPointNearLine( m_nFirstPos, m_nLastPos, point );
 }
 
+void
+__Relation::oscillation( int dx, int dy )
+{
+    QPoint dp = QPoint( dx, dy );
+    m_nFirstPos -= dp;
+    m_nLastPos  += dp;
+}
+
 /*                     */
 /* Class Relation List */
 /*                     */

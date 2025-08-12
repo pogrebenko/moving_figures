@@ -21,6 +21,7 @@ typedef struct __Relation
     float distancePointToLine( const QPoint &p1, const QPoint &p2, const QPoint &p );
     bool  isPointNearLine(const QPoint &p1, const QPoint &p2, const QPoint &p, qreal tolerance = DEFAULT_TOLERANCE );
     bool  contain( const QPoint &point );
+    void  oscillation( int dx, int dy );
 
 } Relation_t;
 

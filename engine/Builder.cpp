@@ -322,3 +322,46 @@ CBuilder::relation_set_last_pos( const QPoint &pt )
     }
     return false;
 }
+
+long
+CBuilder::relation_oscillation( QPoint &pt, int dx, int dy )
+{
+    RelationList_t *rl = m_pAppOption->getRelationList();
+    long n = rl->hover_index( pt );
+    if( n >= 0 )
+    {
+        auto &r = rl->at( n );
+        r->oscillation( dx, dy );
+
+        FigureList_t *fl = m_pAppOption->getFigureList();
+        auto c1 = fl->at(r->m_nFrom);
+        auto c2 = fl->at(r->m_nTo  );
+
+        c1->oscillation( dx, dy );
+        c2->oscillation( dx, dy );
+    }
+    return n;
+}
+
+long
+CBuilder::figure_oscillation( QPoint &pt, int dx, int dy )
+{
+    FigureList_t *fl = m_pAppOption->getFigureList();
+    long n = fl->hover_index( pt );
+    if( n >= 0 )
+    {
+        fl->at( n )->oscillation( dx, dy );
+
+        auto rl = m_pAppOption->getRelationList();
+
+        for( long i = rl->size() - 1; i >= 0; i -- )
+        {
+            auto &p = rl->at( i );
+            if( p->m_nFrom == (long)n || p->m_nTo == (long)n )
+            {
+                p->oscillation( dx, dy );
+            }
+        }
+    }
+    return n;
+}

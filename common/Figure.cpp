@@ -146,6 +146,18 @@ __Figure::valid()
     }
 }
 
+void
+__Figure::oscillation( int dx, int dy )
+{
+    QPoint dp = QPoint( dx, dy );
+
+    m_nFirstPos += dp;
+    m_nLastPos  -= dp;
+
+    m_nAnglePos += dp;
+    m_nResizePos-= dp;
+}
+
 /* class Figure List */
 void
 FigureList_t::hover_clear()
@@ -241,5 +253,3 @@ FigureList_t::hover_last_index( const QPoint &pos )
     // }
     // return -1;
 }
-
-

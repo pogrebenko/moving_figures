@@ -19,6 +19,7 @@ class CCanvas
 public:
 
     explicit CCanvas( QWidget *pParent, CAppOption * const, Logger_t * const );
+    ~CCanvas();
 
 protected:
 
@@ -33,24 +34,15 @@ protected:
 
     bool  m_bMouseLButtonMoved;
     bool  m_bBreakAddFigure;
+    long  m_nDir, m_nX, m_nY;
 
     using QWidget::QWidget;
 
-//     // update/draw tiemrs
-    QTimer *drawTimer;
-    QTimer *updateTimer;
-    QTime  *deltaTimer;
-
-    bool isFirstFrameFinished;
-    float minTimeStepValue;
-    float maxTimeStepValue;
-    float deltaTimeModifier;
-    float minDeltaTimeModifier;
-    float maxDeltaTimeModifier;
+// update/draw tiemrs
+    QTimer *m_pOscilationTimer;
 
 public slots:
-    void updateBuilder();
-    void updatePainter();
+    void oscilationBuilder();
 };
 
 #endif // CANVAS_H

@@ -1,7 +1,7 @@
 #include "canvas.h"
 
-#include <QTimer>
 #include <QTime>
+#include <QTimer>
 
 #include <cmath>
 
@@ -35,61 +35,39 @@ CCanvas::CCanvas( QWidget *pParent, CAppOption * const pAppOption, Logger_t * co
     m_bMouseLButtonMoved = false;
     m_bBreakAddFigure    = false;
 
+    m_nDir = 1; m_nX = 0L; m_nY = 0L;
+    m_pOscilationTimer = new QTimer( this );
+    connect(m_pOscilationTimer, &QTimer::timeout, this, &CCanvas::oscilationBuilder );
+}
 
+CCanvas::~CCanvas()
+{
+    FUNC_TRACE( &__Logger, __PRETTY_FUNCTION__ );
 
-
-
-
-//     // initialize update/draw timers
-//     float updatesPerSecond = 120;
-//     float drawsPerSecond = 30;
-//     // simulation system
-//     isFirstFrameFinished = false;
-//     minDeltaTimeModifier = 0.125;
-//     maxDeltaTimeModifier = 1.0;
-//     deltaTimeModifier = maxDeltaTimeModifier;
-
-//     drawTimer = new QTimer(this);
-//     connect(drawTimer, &QTimer::timeout, this, &CCanvas::updatePainter );
-// //    drawTimer->start(1000.0/drawsPerSecond);
-
-//     updateTimer = new QTimer(this);
-//     connect(updateTimer, &QTimer::timeout, this, &CCanvas::updateBuilder );
-// //    updateTimer->start(1000.0/updatesPerSecond);
-
-//     deltaTimer = new QTime();
-// //    deltaTimer->start();
+    delete m_pOscilationTimer;
 }
 
 void
-CCanvas::updatePainter()
+CCanvas::oscilationBuilder()
 {
-    getLogger()->info( APP_LOG_LEVEL, "info: updatePainter" );
+    FUNC_TRACE( &__Logger, __PRETTY_FUNCTION__ );
+    //getLogger()->info( APP_LOG_LEVEL, "info: tick updateBuilder" );
 
-}
+    QPoint globalMousePos{ QCursor::pos() };
+    QPoint pt = this->mapFromGlobal(globalMousePos);
+    int x = m_nDir * ( m_nX % 4 ), y = m_nDir * ( m_nY % 4 );
+    if(    figure_oscillation  ( pt, x, y ) >= 0
+        || relation_oscillation( pt, x, y ) >= 0 )
+    {
+        if( x == 0 )
+        {
+            m_nDir *= -1;
+        }
+        m_nX ++; m_nY ++;
 
-void
-CCanvas::updateBuilder()
-{
-    getLogger()->info( APP_LOG_LEVEL, "info: updateBuilder" );
-//     minTimeStepValue = floor(1000.0/320.0);
-//     maxTimeStepValue = floor(1000.0/24.0);
-
-//     float dt = (float) deltaTimer->elapsed() / 1000;
-
-//     // dt might be large on the first frame
-//     if (!isFirstFrameFinished) {
-//         dt = minTimeStepValue / 1000.0;
-//         isFirstFrameFinished = true;
-//     }
-//     // make sure dt does not get too big
-//     if (dt > maxTimeStepValue / 1000.0) {
-//         dt = maxTimeStepValue / 1000.0;
-//     }
-//     deltaTimer->restart();
-
-//     dt *= deltaTimeModifier;  // speed of simulation
-//     //Builder.update(dt);
+        draw_figure_relation();
+        update();
+    }
 }
 
 void
@@ -304,6 +282,7 @@ CCanvas::mouseMoveEvent( QMouseEvent *pEvent )
         }
         else
         {
+            long fh = -1, rh = -1;
             this->setCursor( Qt::ArrowCursor );
 
             if( rotate_hover( pt, true, false ) >= 0 && check_action_type( ActionTypeMove ) )
@@ -312,11 +291,18 @@ CCanvas::mouseMoveEvent( QMouseEvent *pEvent )
             if( resize_hover( pt, true, false ) >= 0 && check_action_type( ActionTypeMove ) )
                 this->setCursor( Qt::SizeFDiagCursor );
             else
-            if( figure_hover( pt, true ) >= 0 && check_action_type( ActionTypeMove ) )
+            if( (fh = figure_hover( pt, true )) >= 0 && check_action_type( ActionTypeMove ) )
                 this->setCursor( Qt::PointingHandCursor );
 
+            rh = relation_hover( pt, true );
 
-            relation_hover( pt, true );
+            if( check_action_type( ActionTypeDelete ) )
+            {
+                if( fh >= 0 || rh >= 0 )
+                    m_pOscilationTimer->start(1000/20);
+                else
+                    m_pOscilationTimer->stop();
+            }
 
             draw_figure_relation();
             update();
