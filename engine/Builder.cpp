@@ -333,12 +333,12 @@ CBuilder::relation_oscillation( QPoint &pt, int dx, int dy )
         auto &r = rl->at( n );
         r->oscillation( dx, dy );
 
-        FigureList_t *fl = m_pAppOption->getFigureList();
-        auto c1 = fl->at(r->m_nFrom);
-        auto c2 = fl->at(r->m_nTo  );
+        // FigureList_t *fl = m_pAppOption->getFigureList();
+        // auto c1 = fl->at(r->m_nFrom);
+        // auto c2 = fl->at(r->m_nTo  );
 
-        c1->oscillation( dx, dy );
-        c2->oscillation( dx, dy );
+        // c1->oscillation( dx, dy );
+        // c2->oscillation( dx, dy );
     }
     return n;
 }
