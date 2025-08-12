@@ -365,3 +365,33 @@ CBuilder::figure_oscillation( QPoint &pt, int dx, int dy )
     }
     return n;
 }
+
+void
+CBuilder::relation_rebuild()
+{
+    auto fl = m_pAppOption->getFigureList();
+    auto rl = m_pAppOption->getRelationList();
+
+    for( long i = fl->size() - 1; i >= 0; i -- )
+    {
+        auto &f = fl->at( i );
+
+        QRect rc;
+        rc.setTopLeft    ( f->m_nFirstPos );
+        rc.setBottomRight( f->m_nLastPos  );
+
+        for( long ii = rl->size() - 1; ii >= 0; ii -- )
+        {
+            auto &r = rl->at( ii );
+            if( r->m_nFrom == (long)i )
+            {
+                r->m_nFirstPos = rc.center();
+            }
+            else
+            if( r->m_nTo == (long)i )
+            {
+                r->m_nLastPos = rc.center();
+            }
+        }
+    }
+}

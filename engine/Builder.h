@@ -25,6 +25,7 @@ public:
     void relation_begin_add( long n );
     bool relation_release_add( const QPoint &pos );
     bool relation_set_last_pos( const QPoint &pos );
+    void relation_rebuild();
 
     // figure section
     long figure_hover( const QPoint &pos, bool set_up_hover );
