@@ -300,13 +300,19 @@ CCanvas::mouseMoveEvent( QMouseEvent *pEvent )
             {
                 if( fh >= 0 || rh >= 0 )
                 {
-                    m_nDir = 1; m_nX = 0L; m_nY = 0L;
-                    m_pOscilationTimer->start(1000/20);
+                    if( !m_pOscilationTimer->isActive() )
+                    {
+                        m_nDir = 1; m_nX = 0L; m_nY = 0L;
+                        m_pOscilationTimer->start(1000/20);
+                    }
                 }
                 else
                 {
-                    m_pOscilationTimer->stop();
-                    relation_rebuild();
+                    if( m_pOscilationTimer->isActive() )
+                    {
+                        m_pOscilationTimer->stop();
+                        relation_rebuild();
+                    }
                 }
             }
 
