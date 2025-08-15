@@ -65,22 +65,22 @@
                 "m_bHoverCenter": false,
                 "m_nAngle": 0,
                 "m_nAnglePos": {
-                    "x": 155,
-                    "y": 229
+                    "x": 165,
+                    "y": 258
                 },
                 "m_nAnglesCount": 0,
                 "m_nFigureType": 2,
                 "m_nFirstPos": {
-                    "x": 162,
-                    "y": 237
+                    "x": 172,
+                    "y": 266
                 },
                 "m_nLastPos": {
-                    "x": 226,
-                    "y": 311
+                    "x": 236,
+                    "y": 340
                 },
                 "m_nResizePos": {
-                    "x": 236,
-                    "y": 321
+                    "x": 246,
+                    "y": 350
                 }
             },
             {
@@ -89,10 +89,10 @@
                 "m_bEditText": false,
                 "m_bHover": false,
                 "m_bHoverCenter": false,
-                "m_nAngle": 0.2613571584224701,
+                "m_nAngle": 0.931527316570282,
                 "m_nAnglePos": {
-                    "x": 427,
-                    "y": 158
+                    "x": 412,
+                    "y": 200
                 },
                 "m_nAnglesCount": 4,
                 "m_nFigureType": 3,
@@ -101,12 +101,12 @@
                     "y": 154
                 },
                 "m_nLastPos": {
-                    "x": 513,
-                    "y": 232
+                    "x": 514,
+                    "y": 244
                 },
                 "m_nResizePos": {
-                    "x": 523,
-                    "y": 242
+                    "x": 524,
+                    "y": 254
                 }
             },
             {
@@ -115,24 +115,24 @@
                 "m_bEditText": false,
                 "m_bHover": false,
                 "m_bHoverCenter": false,
-                "m_nAngle": 0.9703384637832642,
+                "m_nAngle": 0.6613052487373352,
                 "m_nAnglePos": {
-                    "x": 281,
-                    "y": 283
+                    "x": 272,
+                    "y": 264
                 },
                 "m_nAnglesCount": 0,
                 "m_nFigureType": 2,
                 "m_nFirstPos": {
-                    "x": 318,
-                    "y": 236
+                    "x": 305,
+                    "y": 237
                 },
                 "m_nLastPos": {
-                    "x": 383,
-                    "y": 334
+                    "x": 370,
+                    "y": 335
                 },
                 "m_nResizePos": {
-                    "x": 393,
-                    "y": 344
+                    "x": 380,
+                    "y": 345
                 }
             },
             {
@@ -221,22 +221,22 @@
                 "m_bHoverCenter": false,
                 "m_nAngle": 0,
                 "m_nAnglePos": {
-                    "x": 44,
-                    "y": 291
+                    "x": 29,
+                    "y": 312
                 },
                 "m_nAnglesCount": 3,
                 "m_nFigureType": 1,
                 "m_nFirstPos": {
-                    "x": 51,
-                    "y": 299
+                    "x": 36,
+                    "y": 320
                 },
                 "m_nLastPos": {
-                    "x": 140,
-                    "y": 394
+                    "x": 125,
+                    "y": 415
                 },
                 "m_nResizePos": {
-                    "x": 150,
-                    "y": 404
+                    "x": 135,
+                    "y": 425
                 }
             },
             {
@@ -247,22 +247,22 @@
                 "m_bHoverCenter": false,
                 "m_nAngle": 5.8186798095703125,
                 "m_nAnglePos": {
-                    "x": 277,
-                    "y": 428
+                    "x": 243,
+                    "y": 407
                 },
                 "m_nAnglesCount": 3,
                 "m_nFigureType": 1,
                 "m_nFirstPos": {
-                    "x": 256,
-                    "y": 444
+                    "x": 222,
+                    "y": 423
                 },
                 "m_nLastPos": {
-                    "x": 299,
-                    "y": 528
+                    "x": 265,
+                    "y": 507
                 },
                 "m_nResizePos": {
-                    "x": 309,
-                    "y": 538
+                    "x": 275,
+                    "y": 517
                 }
             },
             {
@@ -375,9 +375,9 @@
                 "m_bEditText": false,
                 "m_bHover": false,
                 "m_bHoverCenter": false,
-                "m_nAngle": 5.695630073547363,
+                "m_nAngle": 5.7983222007751465,
                 "m_nAnglePos": {
-                    "x": 153,
+                    "x": 151,
                     "y": 96
                 },
                 "m_nAnglesCount": 3,
@@ -387,12 +387,12 @@
                     "y": 129
                 },
                 "m_nLastPos": {
-                    "x": 236,
-                    "y": 190
+                    "x": 253,
+                    "y": 205
                 },
                 "m_nResizePos": {
-                    "x": 246,
-                    "y": 200
+                    "x": 263,
+                    "y": 215
                 }
             },
             {
@@ -464,8 +464,8 @@
             {
                 "m_bHover": false,
                 "m_nFirstPos": {
-                    "x": 184,
-                    "y": 159
+                    "x": 192,
+                    "y": 167
                 },
                 "m_nFrom": 14,
                 "m_nLastPos": {
@@ -478,8 +478,8 @@
             {
                 "m_bHover": false,
                 "m_nFirstPos": {
-                    "x": 184,
-                    "y": 159
+                    "x": 192,
+                    "y": 167
                 },
                 "m_nFrom": 14,
                 "m_nLastPos": {
@@ -492,13 +492,13 @@
             {
                 "m_bHover": false,
                 "m_nFirstPos": {
-                    "x": 184,
-                    "y": 159
+                    "x": 192,
+                    "y": 167
                 },
                 "m_nFrom": 14,
                 "m_nLastPos": {
-                    "x": 194,
-                    "y": 274
+                    "x": 204,
+                    "y": 303
                 },
                 "m_nRelationType": 1,
                 "m_nTo": 2
@@ -506,8 +506,8 @@
             {
                 "m_bHover": false,
                 "m_nFirstPos": {
-                    "x": 194,
-                    "y": 274
+                    "x": 204,
+                    "y": 303
                 },
                 "m_nFrom": 2,
                 "m_nLastPos": {
@@ -525,8 +525,8 @@
                 },
                 "m_nFrom": 7,
                 "m_nLastPos": {
-                    "x": 95,
-                    "y": 346
+                    "x": 80,
+                    "y": 367
                 },
                 "m_nRelationType": 1,
                 "m_nTo": 8
@@ -539,8 +539,8 @@
                 },
                 "m_nFrom": 7,
                 "m_nLastPos": {
-                    "x": 277,
-                    "y": 486
+                    "x": 243,
+                    "y": 465
                 },
                 "m_nRelationType": 1,
                 "m_nTo": 9
@@ -548,8 +548,8 @@
             {
                 "m_bHover": false,
                 "m_nFirstPos": {
-                    "x": 194,
-                    "y": 274
+                    "x": 204,
+                    "y": 303
                 },
                 "m_nFrom": 2,
                 "m_nLastPos": {
@@ -581,8 +581,8 @@
                 },
                 "m_nFrom": 5,
                 "m_nLastPos": {
-                    "x": 350,
-                    "y": 285
+                    "x": 337,
+                    "y": 286
                 },
                 "m_nRelationType": 1,
                 "m_nTo": 4
@@ -590,8 +590,8 @@
             {
                 "m_bHover": false,
                 "m_nFirstPos": {
-                    "x": 350,
-                    "y": 285
+                    "x": 337,
+                    "y": 286
                 },
                 "m_nFrom": 4,
                 "m_nLastPos": {
@@ -610,7 +610,7 @@
                 "m_nFrom": 13,
                 "m_nLastPos": {
                     "x": 479,
-                    "y": 193
+                    "y": 199
                 },
                 "m_nRelationType": 1,
                 "m_nTo": 3
@@ -619,7 +619,7 @@
                 "m_bHover": false,
                 "m_nFirstPos": {
                     "x": 479,
-                    "y": 193
+                    "y": 199
                 },
                 "m_nFrom": 3,
                 "m_nLastPos": {
@@ -698,13 +698,13 @@
     "m_nCPRadius": 2,
     "m_nFigureType": 1,
     "m_nFirstPos": {
-        "x": 478,
-        "y": 191
+        "x": 309,
+        "y": 281
     },
     "m_nIndexFrom": 10,
     "m_nLastPos": {
-        "x": 187,
-        "y": 158
+        "x": 309,
+        "y": 281
     },
     "m_nRelationType": 1,
     "m_nWidth": 2,
