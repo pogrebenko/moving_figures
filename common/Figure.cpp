@@ -18,6 +18,9 @@ __Figure::__Figure( const FigureType_t nFigureType )
     m_bHoverLast   = false;
     m_bHoverAngle  = false;
     m_bHoverResize = false;
+    m_bHoverCenter = false;
+    m_bEditText    = false;
+    m_bEditOptions = false;
     m_nAngle       = 0.;
     m_nAnglesCount = -1;
 }
@@ -170,7 +173,8 @@ FigureList_t::hover_clear()
         pItem->m_bHoverFirst =
         pItem->m_bHoverLast  =
         pItem->m_bHoverAngle =
-        pItem->m_bHoverResize= false;
+        pItem->m_bHoverResize=
+        pItem->m_bHoverCenter= false;
     }
 }
 
@@ -220,6 +224,21 @@ FigureList_t::hover_angle_index( const QPoint &pos )
     //     }
     // }
     // return -1;
+}
+
+long
+FigureList_t::hover_center_index( const QPoint &pos )
+{
+    auto found = std::find_if( __EXECUTION_POLICY_BUILDER__, rbegin(), rend(),
+        [pos]( auto pItem )
+        {
+          QRect rc;
+          rc.setTopLeft    ( pItem->m_nFirstPos );
+          rc.setBottomRight( pItem->m_nLastPos  );
+          return pItem->near_points( rc.center(), pos );
+        }
+    );
+    return ( found != rend() ) ? std::distance( begin(), -- found.base() ) : -1;
 }
 
 long

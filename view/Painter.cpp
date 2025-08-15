@@ -314,9 +314,9 @@ CPainter::draw_figure_item( QPainter &painter, Figure_t &pItem )
     painter.drawEllipse( rcf.center(), r, r );
 
     // resize points
+    float dx = 1.7;
     if( m_pAppOption->getActionType() == ActionTypeMove )
     {
-        float dx = 1.7;
         nWidth = pItem.m_bHoverFirst ? dx*m_pAppOption->getWidthHover() : m_pAppOption->getWidth();
         pen.setWidthF( nWidth );
         painter.setPen( pen );
@@ -339,5 +339,27 @@ CPainter::draw_figure_item( QPainter &painter, Figure_t &pItem )
         pen.setColor ( m_pAppOption->getPenColorResize() );
         painter.setPen( pen );
         painter.drawEllipse( QPointF(pItem.m_nResizePos ), r, r );
+    }
+
+    dx = 2.0;
+    nWidth = pItem.m_bHoverCenter ? dx*m_pAppOption->getWidthHover() : m_pAppOption->getWidth();
+    pen.setWidthF( nWidth );
+    pen.setColor ( m_pAppOption->getPenColor() );
+    painter.setPen( pen );
+    painter.drawEllipse( rcf.center(), r, r );
+
+    if( !pItem.m_Name.empty() )
+    {
+        painter.save();
+        auto fm = painter.fontMetrics();
+        int w = fm.horizontalAdvance( pItem.m_Name.c_str() );
+        int h = fm.height();
+        int x = rcf.center().x() - w/2;
+        int y = rcf.center().y() + h/2;
+        painter.translate( rcf.center().x(), rcf.center().y() );
+        painter.rotate( -qRadiansToDegrees( pItem.m_nAngle ) );
+        painter.translate( -rcf.center().x(), -rcf.center().y() );
+        painter.drawText( x, y, pItem.m_Name.c_str() );
+        painter.restore();
     }
 }

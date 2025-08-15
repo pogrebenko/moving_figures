@@ -3,6 +3,7 @@
 
 #include <QMouseEvent>
 #include <QWidget>
+#include <QTextEdit>
 
 #include "common/Figure.h"
 #include "common/Relation.h"
@@ -41,8 +42,11 @@ protected:
 // update/draw tiemrs
     QTimer *m_pOscilationTimer;
 
+    QTextEdit *m_pNameEdit;
+
 public slots:
     void oscilationBuilder();
+    void onTextChanged();
 };
 
 #endif // CANVAS_H

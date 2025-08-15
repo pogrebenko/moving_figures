@@ -38,6 +38,39 @@ CCanvas::CCanvas( QWidget *pParent, CAppOption * const pAppOption, Logger_t * co
     m_nDir = 1; m_nX = 0L; m_nY = 0L;
     m_pOscilationTimer = new QTimer( this );
     connect(m_pOscilationTimer, &QTimer::timeout, this, &CCanvas::oscilationBuilder );
+
+    m_pNameEdit = new QTextEdit( this );
+    m_pNameEdit->hide();
+    connect( m_pNameEdit, &QTextEdit::textChanged, this, &CCanvas::onTextChanged );
+}
+
+void CCanvas::onTextChanged()
+{
+    std::string str = m_pNameEdit->toPlainText().toStdString();
+    char ch = str.back();
+    if( ch == '\n' || ch == 27 )
+    {
+        auto cl = __AppOption.getFigureList();
+        auto found = std::find_if( __EXECUTION_POLICY_BUILDER__, cl->begin(), cl->end(), []( auto pItem ) { return pItem->m_bEditText; } );
+        if( found != cl->end() )
+        {
+            found->get()->m_bEditText = false;
+        }
+
+        m_pNameEdit->hide();
+
+        draw_figure_relation();
+        update();
+    }
+    else
+    {
+        auto cl = __AppOption.getFigureList();
+        auto found = std::find_if( __EXECUTION_POLICY_BUILDER__, cl->begin(), cl->end(), []( auto pItem ) { return pItem->m_bEditText; } );
+        if( found != cl->end() )
+        {
+            found->get()->m_Name = str;
+        }
+    }
 }
 
 CCanvas::~CCanvas()
@@ -45,6 +78,7 @@ CCanvas::~CCanvas()
     FUNC_TRACE( &__Logger, __PRETTY_FUNCTION__ );
 
     delete m_pOscilationTimer;
+    delete m_pNameEdit;
 }
 
 void
@@ -185,6 +219,26 @@ CCanvas::mouseDoubleClickEvent( QMouseEvent *pEvent )
         QPoint pt( pEvent->pos() );
         if( pEvent->button() == Qt::LeftButton )
         {
+            long n = -1;
+            if( (n = center_hover( pt, false )) >= 0 )
+            {
+                auto fm = m_pNameEdit->fontMetrics();
+                int  w = fm.horizontalAdvance( "here we enter the name" );
+                int  h = fm.height() * 1.7;
+                int  x = pt.x();
+                int  y = pt.y();
+                m_pNameEdit->setGeometry( x - w/2, y - h/2, w, h );
+                auto fl = __AppOption.getFigureList();
+                     fl->at( n )->m_bEditText = true;
+                m_pNameEdit->setText( fl->at( n )->m_Name.c_str() );
+                m_pNameEdit->show();
+                m_pNameEdit->setFocus();
+                m_pNameEdit->moveCursor( QTextCursor::End );
+
+                draw_figure_relation();
+                update();
+            }
+            else
             if( relation_rotate_type( relation_hover( pt, false ) ) || figure_rotate_type( figure_hover( pt, false ) ) )
             {
                 draw_figure_relation();
@@ -285,6 +339,9 @@ CCanvas::mouseMoveEvent( QMouseEvent *pEvent )
             long fh = -1, rh = -1;
             this->setCursor( Qt::ArrowCursor );
 
+            if( center_hover( pt, true ) >= 0 )
+                this->setCursor( Qt::IBeamCursor );
+            else
             if( rotate_hover( pt, true, false ) >= 0 && check_action_type( ActionTypeMove ) )
                 this->setCursor( Qt::PointingHandCursor );
             else

@@ -21,6 +21,9 @@ typedef struct __Figure
     bool         m_bHoverLast  ;
     bool         m_bHoverAngle ;
     bool         m_bHoverResize;
+    bool         m_bHoverCenter;
+    bool         m_bEditText   ;
+    bool         m_bEditOptions;
     float        m_nAngle      ;
     long         m_nAnglesCount;
     std::string  m_Name        ;
@@ -60,6 +63,7 @@ public:
     long hover_resize_index( const QPoint &pos );
     long hover_first_index( const QPoint &pos );
     long hover_last_index( const QPoint &pos );
+    long hover_center_index( const QPoint &pos );
 
     inline void Flush(){ clear(); }
     inline void Delete( unsigned long i ) { this->erase( this->begin() + i ); }

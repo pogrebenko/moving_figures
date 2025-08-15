@@ -395,3 +395,15 @@ CBuilder::relation_rebuild()
         }
     }
 }
+
+long
+CBuilder::center_hover( const QPoint &pos, bool set_up_hover )
+{
+    long n = m_pAppOption->getFigureList()->hover_center_index( pos );
+    if( n >= 0 && set_up_hover )
+    {
+        auto &pItem = m_pAppOption->getFigureList()->at( n );
+        pItem->m_bHoverCenter = true;
+    }
+    return n;
+}

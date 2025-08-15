@@ -39,6 +39,7 @@ public:
 
     long resize_hover( const QPoint &pos, bool set_up_hover, bool set_up_resize );
     long rotate_hover( const QPoint &pos, bool set_up_hover, bool set_up_resize );
+    long center_hover( const QPoint &pos, bool set_up_hover );
 
     long relation_oscillation( QPoint &pt, int dx, int dy );
     long figure_oscillation( QPoint &pt, int dx, int dy );
