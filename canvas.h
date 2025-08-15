@@ -33,6 +33,8 @@ protected:
     void keyPressEvent        ( QKeyEvent   * ) override;
     void keyReleaseEvent      ( QKeyEvent   * ) override;
 
+    bool eventFilter(QObject  *obj, QEvent * event) override;
+
     bool  m_bMouseLButtonMoved;
     bool  m_bBreakAddFigure;
     long  m_nDir, m_nX, m_nY;

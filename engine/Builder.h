@@ -17,6 +17,7 @@ public:
     bool check_action_type( ActionType_t ActionType );
 
     void hover_reset();
+    void edit_reset();
 
     // relation section
     long relation_hover( const QPoint &pos, bool set_up_hover );

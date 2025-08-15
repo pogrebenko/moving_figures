@@ -178,6 +178,17 @@ FigureList_t::hover_clear()
     }
 }
 
+void
+FigureList_t::edit_clear()
+{
+    for( long n = size() - 1; n >= 0; n -- )
+    {
+        auto &pItem = at( n );
+        pItem->m_bEditText    =
+            pItem->m_bEditOptions = false;
+    }
+}
+
 long
 FigureList_t::hover_index( const QPoint &pos )
 {

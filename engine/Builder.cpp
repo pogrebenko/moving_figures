@@ -33,6 +33,12 @@ CBuilder::hover_reset()
 }
 
 
+void
+CBuilder::edit_reset()
+{
+    m_pAppOption->getFigureList()->edit_clear();
+}
+
 long
 CBuilder::figure_hover( const QPoint &pos, bool set_up_hover )
 {

@@ -41,32 +41,43 @@ CCanvas::CCanvas( QWidget *pParent, CAppOption * const pAppOption, Logger_t * co
 
     m_pNameEdit = new QTextEdit( this );
     m_pNameEdit->hide();
+    m_pNameEdit->installEventFilter( this );
     connect( m_pNameEdit, &QTextEdit::textChanged, this, &CCanvas::onTextChanged );
+    //connect( m_pNameEdit, &QTextEdit::textChanged, [this]() { onTextChanged(); });
 }
 
-void CCanvas::onTextChanged()
+bool CCanvas::eventFilter( QObject  *obj, QEvent * event )
 {
-    std::string str = m_pNameEdit->toPlainText().toStdString();
-    char ch = str.back();
-    if( ch == '\n' || ch == 27 )
+    if((QTextEdit *)obj == m_pNameEdit && event->type()==QEvent::KeyPress && ((QKeyEvent*)event)->key() == Qt::Key_Escape )
     {
-        auto cl = __AppOption.getFigureList();
-        auto found = std::find_if( __EXECUTION_POLICY_BUILDER__, cl->begin(), cl->end(), []( auto pItem ) { return pItem->m_bEditText; } );
-        if( found != cl->end() )
-        {
-            found->get()->m_bEditText = false;
-        }
-
+        edit_reset();
         m_pNameEdit->hide();
 
         draw_figure_relation();
         update();
     }
-    else
+
+    return false;
+}
+
+void CCanvas::onTextChanged()
+{
+    auto cl = __AppOption.getFigureList();
+    auto found = std::find_if( __EXECUTION_POLICY_BUILDER__, cl->begin(), cl->end(), []( auto pItem ) { return pItem->m_bEditText; } );
+    if( found != cl->end() )
     {
-        auto cl = __AppOption.getFigureList();
-        auto found = std::find_if( __EXECUTION_POLICY_BUILDER__, cl->begin(), cl->end(), []( auto pItem ) { return pItem->m_bEditText; } );
-        if( found != cl->end() )
+        std::string str = m_pNameEdit->toPlainText().toStdString();
+        char ch = str.back();
+        if( ch == '\n' )
+        {
+            found->get()->m_bEditText = false;
+
+            m_pNameEdit->hide();
+
+            draw_figure_relation();
+            update();
+        }
+        else
         {
             found->get()->m_Name = str;
         }

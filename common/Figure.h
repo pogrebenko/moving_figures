@@ -65,6 +65,8 @@ public:
     long hover_last_index( const QPoint &pos );
     long hover_center_index( const QPoint &pos );
 
+    void edit_clear();
+
     inline void Flush(){ clear(); }
     inline void Delete( unsigned long i ) { this->erase( this->begin() + i ); }
     inline void Add( Figure_t *pItem ) { this->push_back( CFigureHolder( pItem ) ); }
