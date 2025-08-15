@@ -47,6 +47,11 @@ QJsonObject& Write( QJsonObject &ios, Figure_t &obj )
     ios[ "m_bHover"      ] =      obj.m_bHover      ;
     ios[ "m_nAnglesCount"] = (int)obj.m_nAnglesCount;
     ios[ "m_nAngle"      ] =      obj.m_nAngle      ;
+    ios[ "m_bHoverCenter"] =      obj.m_bHoverCenter;
+    ios[ "m_bEditText"   ] =      obj.m_bEditText   ;
+    ios[ "m_bEditOptions"] =      obj.m_bEditOptions;
+    ios[ "m_Name"        ] =      QString::fromStdString( obj.m_Name );
+
     ios[ "m_nFirstPos"   ] =          m_nFirstPos   ;
     ios[ "m_nLastPos"    ] =          m_nLastPos    ;
     ios[ "m_nAnglePos"   ] =          m_nAnglePos   ;
@@ -61,6 +66,11 @@ Figure_t& Read( QJsonObject &ios, Figure_t &obj, long version )
     obj .m_bHover      =               ios[ "m_bHover"      ].toBool  ();
     obj .m_nAnglesCount=               ios[ "m_nAnglesCount"].toInt   ();
     obj .m_nAngle      =               ios[ "m_nAngle"      ].toDouble();
+    obj. m_bHoverCenter=               ios[ "m_bHoverCenter"].toBool  ();
+    obj. m_bEditText   =               ios[ "m_bEditText"   ].toBool  ();
+    obj. m_bEditOptions=               ios[ "m_bEditOptions"].toBool  ();
+    obj. m_Name        =               ios[ "m_Name"        ].toString().toStdString();
+
     auto m_nFirstPos   =               ios[ "m_nFirstPos"   ].toObject();
     auto m_nLastPos    =               ios[ "m_nLastPos"    ].toObject();
     auto m_nAnglePos   =               ios[ "m_nAnglePos"   ].toObject();
@@ -83,6 +93,10 @@ CIOStreamer& Write( CIOStreamer &ios, Figure_t &obj )
     ::Write   ( ios, obj.m_nAngle      );
     ::Write   ( ios, obj.m_nAnglesCount);
     ::Write   ( ios, obj.m_bHover      );
+    ::Write   ( ios, obj.m_bHoverCenter);
+    ::Write   ( ios, obj.m_bEditText   );
+    ::Write   ( ios, obj.m_bEditOptions);
+    ::Write   ( ios, obj.m_Name        );
     return ios;
 }
 
@@ -96,6 +110,10 @@ Figure_t& Read( CIOStreamer &ios, Figure_t &obj, long version )
     ::Read   ( ios, obj.m_nAngle               );
     ::Read   ( ios, obj.m_nAnglesCount         );
     ::Read   ( ios, obj.m_bHover               );
+    ::Read   ( ios, obj.m_bHoverCenter         );
+    ::Read   ( ios, obj.m_bEditText            );
+    ::Read   ( ios, obj.m_bEditOptions         );
+    ::Read   ( ios, obj.m_Name                 );
     return obj;
 }
 

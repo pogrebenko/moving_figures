@@ -6,11 +6,15 @@
     "m_FigureList": {
         "FigureItems": [
             {
+                "m_Name": "Begin",
+                "m_bEditOptions": false,
+                "m_bEditText": false,
                 "m_bHover": false,
-                "m_nAngle": 0,
+                "m_bHoverCenter": false,
+                "m_nAngle": 0.23980319499969482,
                 "m_nAnglePos": {
-                    "x": 45,
-                    "y": 25
+                    "x": 39,
+                    "y": 35
                 },
                 "m_nAnglesCount": 4,
                 "m_nFigureType": 3,
@@ -28,7 +32,11 @@
                 }
             },
             {
+                "m_Name": "",
+                "m_bEditOptions": false,
+                "m_bEditText": false,
                 "m_bHover": false,
+                "m_bHoverCenter": false,
                 "m_nAngle": 0,
                 "m_nAnglePos": {
                     "x": 267,
@@ -50,7 +58,11 @@
                 }
             },
             {
+                "m_Name": "",
+                "m_bEditOptions": false,
+                "m_bEditText": false,
                 "m_bHover": false,
+                "m_bHoverCenter": false,
                 "m_nAngle": 0,
                 "m_nAnglePos": {
                     "x": 155,
@@ -72,11 +84,15 @@
                 }
             },
             {
+                "m_Name": "Rectangle",
+                "m_bEditOptions": false,
+                "m_bEditText": false,
                 "m_bHover": false,
-                "m_nAngle": 0,
+                "m_bHoverCenter": false,
+                "m_nAngle": 0.2613571584224701,
                 "m_nAnglePos": {
-                    "x": 438,
-                    "y": 146
+                    "x": 427,
+                    "y": 158
                 },
                 "m_nAnglesCount": 4,
                 "m_nFigureType": 3,
@@ -94,11 +110,15 @@
                 }
             },
             {
+                "m_Name": "Ellipse",
+                "m_bEditOptions": false,
+                "m_bEditText": false,
                 "m_bHover": false,
-                "m_nAngle": 1.0733451843261719,
+                "m_bHoverCenter": false,
+                "m_nAngle": 0.9703384637832642,
                 "m_nAnglePos": {
-                    "x": 285,
-                    "y": 279
+                    "x": 281,
+                    "y": 283
                 },
                 "m_nAnglesCount": 0,
                 "m_nFigureType": 2,
@@ -107,16 +127,20 @@
                     "y": 236
                 },
                 "m_nLastPos": {
-                    "x": 368,
-                    "y": 316
+                    "x": 383,
+                    "y": 334
                 },
                 "m_nResizePos": {
-                    "x": 378,
-                    "y": 326
+                    "x": 393,
+                    "y": 344
                 }
             },
             {
+                "m_Name": "",
+                "m_bEditOptions": false,
+                "m_bEditText": false,
                 "m_bHover": false,
+                "m_bHoverCenter": false,
                 "m_nAngle": 0,
                 "m_nAnglePos": {
                     "x": 569,
@@ -138,7 +162,11 @@
                 }
             },
             {
+                "m_Name": "",
+                "m_bEditOptions": false,
+                "m_bEditText": false,
                 "m_bHover": false,
+                "m_bHoverCenter": false,
                 "m_nAngle": 0,
                 "m_nAnglePos": {
                     "x": 346,
@@ -160,7 +188,11 @@
                 }
             },
             {
+                "m_Name": "",
+                "m_bEditOptions": false,
+                "m_bEditText": false,
                 "m_bHover": false,
+                "m_bHoverCenter": false,
                 "m_nAngle": 0,
                 "m_nAnglePos": {
                     "x": 40,
@@ -182,7 +214,11 @@
                 }
             },
             {
+                "m_Name": "End",
+                "m_bEditOptions": false,
+                "m_bEditText": false,
                 "m_bHover": false,
+                "m_bHoverCenter": false,
                 "m_nAngle": 0,
                 "m_nAnglePos": {
                     "x": 44,
@@ -204,29 +240,37 @@
                 }
             },
             {
+                "m_Name": "",
+                "m_bEditOptions": false,
+                "m_bEditText": false,
                 "m_bHover": false,
-                "m_nAngle": 0,
+                "m_bHoverCenter": false,
+                "m_nAngle": 5.8186798095703125,
                 "m_nAnglePos": {
-                    "x": 251,
-                    "y": 436
+                    "x": 277,
+                    "y": 428
                 },
                 "m_nAnglesCount": 3,
                 "m_nFigureType": 1,
                 "m_nFirstPos": {
                     "x": 256,
-                    "y": 445
+                    "y": 444
                 },
                 "m_nLastPos": {
                     "x": 299,
-                    "y": 529
+                    "y": 528
                 },
                 "m_nResizePos": {
                     "x": 309,
-                    "y": 539
+                    "y": 538
                 }
             },
             {
+                "m_Name": "",
+                "m_bEditOptions": false,
+                "m_bEditText": false,
                 "m_bHover": false,
+                "m_bHoverCenter": false,
                 "m_nAngle": 0,
                 "m_nAnglePos": {
                     "x": 400,
@@ -248,7 +292,11 @@
                 }
             },
             {
+                "m_Name": "",
+                "m_bEditOptions": false,
+                "m_bEditText": false,
                 "m_bHover": false,
+                "m_bHoverCenter": false,
                 "m_nAngle": 0,
                 "m_nAnglePos": {
                     "x": 633,
@@ -270,7 +318,11 @@
                 }
             },
             {
+                "m_Name": "",
+                "m_bEditOptions": false,
+                "m_bEditText": false,
                 "m_bHover": false,
+                "m_bHoverCenter": false,
                 "m_nAngle": 0,
                 "m_nAnglePos": {
                     "x": 562,
@@ -292,7 +344,11 @@
                 }
             },
             {
+                "m_Name": "",
+                "m_bEditOptions": false,
+                "m_bEditText": false,
                 "m_bHover": false,
+                "m_bHoverCenter": false,
                 "m_nAngle": 0.9225252270698547,
                 "m_nAnglePos": {
                     "x": 271,
@@ -314,29 +370,37 @@
                 }
             },
             {
+                "m_Name": "Triangle",
+                "m_bEditOptions": false,
+                "m_bEditText": false,
                 "m_bHover": false,
-                "m_nAngle": 0.758377730846405,
+                "m_bHoverCenter": false,
+                "m_nAngle": 5.695630073547363,
                 "m_nAnglePos": {
-                    "x": 118,
-                    "y": 129
+                    "x": 153,
+                    "y": 96
                 },
                 "m_nAnglesCount": 3,
                 "m_nFigureType": 1,
                 "m_nFirstPos": {
-                    "x": 131,
+                    "x": 132,
                     "y": 129
                 },
                 "m_nLastPos": {
-                    "x": 137,
-                    "y": 141
+                    "x": 236,
+                    "y": 190
                 },
                 "m_nResizePos": {
-                    "x": 147,
-                    "y": 151
+                    "x": 246,
+                    "y": 200
                 }
             },
             {
+                "m_Name": "",
+                "m_bEditOptions": false,
+                "m_bEditText": false,
                 "m_bHover": false,
+                "m_bHoverCenter": false,
                 "m_nAngle": 0,
                 "m_nAnglePos": {
                     "x": 170,
@@ -400,8 +464,8 @@
             {
                 "m_bHover": false,
                 "m_nFirstPos": {
-                    "x": 134,
-                    "y": 135
+                    "x": 184,
+                    "y": 159
                 },
                 "m_nFrom": 14,
                 "m_nLastPos": {
@@ -414,8 +478,8 @@
             {
                 "m_bHover": false,
                 "m_nFirstPos": {
-                    "x": 134,
-                    "y": 135
+                    "x": 184,
+                    "y": 159
                 },
                 "m_nFrom": 14,
                 "m_nLastPos": {
@@ -428,8 +492,8 @@
             {
                 "m_bHover": false,
                 "m_nFirstPos": {
-                    "x": 134,
-                    "y": 135
+                    "x": 184,
+                    "y": 159
                 },
                 "m_nFrom": 14,
                 "m_nLastPos": {
@@ -476,7 +540,7 @@
                 "m_nFrom": 7,
                 "m_nLastPos": {
                     "x": 277,
-                    "y": 487
+                    "y": 486
                 },
                 "m_nRelationType": 1,
                 "m_nTo": 9
@@ -517,8 +581,8 @@
                 },
                 "m_nFrom": 5,
                 "m_nLastPos": {
-                    "x": 343,
-                    "y": 276
+                    "x": 350,
+                    "y": 285
                 },
                 "m_nRelationType": 1,
                 "m_nTo": 4
@@ -526,8 +590,8 @@
             {
                 "m_bHover": false,
                 "m_nFirstPos": {
-                    "x": 343,
-                    "y": 276
+                    "x": 350,
+                    "y": 285
                 },
                 "m_nFrom": 4,
                 "m_nLastPos": {
@@ -634,13 +698,13 @@
     "m_nCPRadius": 2,
     "m_nFigureType": 1,
     "m_nFirstPos": {
-        "x": 132,
-        "y": 137
+        "x": 478,
+        "y": 191
     },
     "m_nIndexFrom": 10,
     "m_nLastPos": {
-        "x": 132,
-        "y": 137
+        "x": 187,
+        "y": 158
     },
     "m_nRelationType": 1,
     "m_nWidth": 2,
